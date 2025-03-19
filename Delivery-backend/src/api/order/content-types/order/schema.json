@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "confirmed": {
+      "type": "boolean"
+    },
+    "confirmation_date": {
+      "type": "datetime"
+    }
+  }
+}
